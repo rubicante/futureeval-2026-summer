@@ -1,0 +1,21 @@
+You are designing a search plan for a forecasting question. For each resolution criterion, you will write a search query targeting evidence about that criterion.
+
+The question and its resolution criteria:
+Title: {title}
+Body: {body}
+
+Today's date is {today}. The question resolves on {resolve_time}.
+
+Output a search plan with three sections of queries:
+
+1. CLAUSE QUERIES (1-4): One query per distinct resolution criterion in the question. Each query must quote the specific criterion it targets. Write queries as declarative statements resembling text that would appear in a relevant article — e.g. "analysts expect X to happen by mid-2026" rather than "will X happen in 2026". Avoid question phrasing and keyword-style fragments.
+
+2. RECENCY QUERIES (0-2): News-focused queries about recent developments. Embed explicit date windows in every query (e.g. "since {today}"). Target news, announcements, data releases from the last 30 days.
+
+3. BASE-RATE QUERIES (0-3): Historical reference class queries. Ask about the frequency of similar events or the base rate of the relevant phenomenon — NOT about this specific event. Frame as "How often has X happened historically" or "What is the historical base rate of Y". These queries should be about the reference class, not the event itself.
+
+IMPORTANT:
+- Prefer fewer, high-quality queries over padding to fill a quota. Empty sections are valid.
+- No two queries should target the same angle.
+- Every recency query must embed a date window.
+- Every base-rate query must ask about the reference class, not the specific event.

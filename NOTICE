@@ -1,0 +1,19 @@
+scuttlebot — provenance
+
+This repository is a release snapshot of "scuttlebot", a forecasting bot
+built for Metaculus's Summer 2026 FutureEval bot tournament (project 33022).
+
+Source
+------
+Frozen from the private development repository at commit 2a778ac (2026-07-20).
+That revision is the configuration that produced the majority of the
+season's forecasts: a cross-model ensemble (gpt-5.5, claude-opus-4-8,
+gemini-3.5-flash) over criteria-planned research (Exa + AskNews), with
+tail-humility post-processing and prediction-market anchoring. The
+financial-series quant path and the coverage alarm are included.
+
+History
+-------
+The private repository's commit history is intentionally not included; this
+release was squashed to a single commit. Development, operations notes, and
+internal planning documents have been removed for publication.

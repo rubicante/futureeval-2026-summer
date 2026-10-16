@@ -1,0 +1,20 @@
+You are reviewing research results for a forecasting question and checking for evidence gaps.
+
+Question:
+Title: {title}
+Body: {body}
+
+The search plan targeted these areas:
+- Criteria queries: {clause_queries}
+- Recency queries: {recency_queries}
+- Base-rate queries: {base_rate_queries}
+
+Results by section:
+
+{results_summary}
+
+Identify 0-3 specific follow-up search queries that would meaningfully fill evidence gaps. Each follow-up query should target a specific missing angle, data point, or perspective that the existing results do not cover.
+
+An empty list ("no follow-ups needed") is a valid, expected answer when coverage is sufficient.
+
+Write each query as a declarative statement — not a question or keyword fragment.

@@ -1,0 +1,129 @@
+{
+  "binary_api_post": {
+    "id": 578,
+    "title": "Will humans go extinct before 2100?",
+    "question": {
+      "id": 578,
+      "title": "Will humans go extinct before 2100?",
+      "type": "binary",
+      "description": "Test description text.",
+      "resolution_criteria": "Resolves Yes if no humans alive.",
+      "fine_print": "Fine print details.",
+      "options": [],
+      "open_lower_bound": false,
+      "open_upper_bound": false,
+      "scaling": null,
+      "unit": null,
+      "scheduled_resolve_time": "2100-01-02T00:01:00Z",
+      "aggregations": {
+        "recency_weighted": {
+          "latest": {
+            "probability_yes": 0.19
+          }
+        }
+      }
+    }
+  },
+  "numeric_api_post": {
+    "id": 1234,
+    "title": "Global average temperature rise by 2050?",
+    "question": {
+      "id": 1234,
+      "title": "Global average temperature rise by 2050?",
+      "type": "numeric",
+      "description": "Temperature rise in °C above pre-industrial.",
+      "resolution_criteria": "Resolves based on IPCC report.",
+      "fine_print": "",
+      "options": [],
+      "open_lower_bound": false,
+      "open_upper_bound": false,
+      "scaling": {
+        "range_min": 0.0,
+        "range_max": 5.0,
+        "zero_point": null,
+        "inbound_outcome_count": 200
+      },
+      "unit": "°C",
+      "scheduled_resolve_time": "2050-01-01T00:00:00Z",
+      "aggregations": {
+        "recency_weighted": {
+          "latest": {
+            "continuous_cdf": []
+          }
+        }
+      }
+    }
+  },
+  "log_numeric_api_post": {
+    "id": 5678,
+    "title": "Total cost of project X?",
+    "question": {
+      "id": 5678,
+      "title": "Total cost of project X?",
+      "type": "numeric",
+      "description": "Total cost in USD.",
+      "resolution_criteria": "",
+      "fine_print": "",
+      "options": [],
+      "open_lower_bound": false,
+      "open_upper_bound": false,
+      "scaling": {
+        "range_min": 10.0,
+        "range_max": 100000.0,
+        "zero_point": 1.0,
+        "inbound_outcome_count": 200
+      },
+      "unit": "USD",
+      "scheduled_resolve_time": "2030-01-01T00:00:00Z",
+      "aggregations": {}
+    }
+  },
+  "mc_api_post": {
+    "id": 4321,
+    "title": "Who will win the 2028 US presidential election?",
+    "question": {
+      "id": 4321,
+      "title": "Who will win the 2028 US presidential election?",
+      "type": "multiple_choice",
+      "description": "Test description.",
+      "resolution_criteria": "",
+      "fine_print": "",
+      "options": ["Democrat", "Republican", "Other"],
+      "open_lower_bound": null,
+      "open_upper_bound": null,
+      "scaling": null,
+      "unit": null,
+      "scheduled_resolve_time": "2028-11-07T00:00:00Z",
+      "aggregations": {
+        "recency_weighted": {
+          "latest": {
+            "probability_yes_per_category": {
+              "Democrat": 0.45,
+              "Republican": 0.40,
+              "Other": 0.15
+            }
+          }
+        }
+      }
+    }
+  },
+  "minimal_api_post": {
+    "id": 1,
+    "title": "Minimal question",
+    "question": {
+      "id": 1,
+      "title": "Minimal question",
+      "type": "binary",
+      "description": "",
+      "resolution_criteria": "",
+      "fine_print": "",
+      "options": [],
+      "open_lower_bound": null,
+      "open_upper_bound": null,
+      "scaling": null,
+      "unit": null,
+      "scheduled_resolve_time": null,
+      "aggregations": {}
+    }
+  }
+}

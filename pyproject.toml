@@ -1,0 +1,74 @@
+[project]
+name = "scuttlebot"
+version = "0.1.0"
+description = "A forecasting bot for Metaculus bot tournaments."
+requires-python = ">=3.11,<4"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "anthropic>=0.105.2",
+    "asknews>=0.13.0,<0.14",
+    "exa-py>=2.13.0,<3",
+    "google-genai>=2.7.0",
+    "httpx>=0.28.0,<1",
+    "instructor>=1.0,<2",
+    "numpy>=2.3.0,<3",
+    "openai>=2.30.0,<3",
+    "pydantic>=2.10.0,<3",
+    "python-dotenv>=1.0.1,<2",
+    "rich>=14.0.0,<15",
+    "tenacity>=9.0.0,<10",
+    "tiktoken>=0.13.0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=2.1.0",
+    "pre-commit>=4.6.0",
+    "pytest>=9.0.3",
+    "pytest-asyncio>=1.0.0",
+    "pytest-httpx>=0.36.0",
+    "ruff>=0.15.13",
+]
+
+[tool.uv]
+package = false
+default-groups = ["dev"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+exclude = []
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "W", "B", "C4", "SIM", "PLC", "PLE", "PLW"]
+ignore = ["E501"]  # formatter handles line length
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["PLC0415", "SIM117"]
+"scripts/**/*.py" = ["E402"]  # sys.path bootstrap precedes project imports
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore::pydantic.warnings.PydanticDeprecatedSince20:asknews_sdk.*",
+]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.mypy]
+explicit_package_bases = true
+exclude = []
+
+[build-system]
+requires = ["uv_build>=0.11.14,<0.12.0"]
+build-backend = "uv_build"
+
